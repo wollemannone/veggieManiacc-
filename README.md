@@ -2,4 +2,4 @@
 Data visualisation of ways to cook vegetables
 
 
-http://wollemannone.github.io/veggieManiacc/
+http://wollemannone.github.io/veggieManiacc-/
