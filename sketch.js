@@ -13,17 +13,18 @@ var canvas = createCanvas (800,1000);
 canvas.parent('sketch');
 var x0 = 200;
 
-background(0);
+background(100,50,80);
 
 for (var i = x0; i < width; i += 100) {
 
-	fill(0,0,8);
-	rect(i, 0, 50, height);
+	fill(100,50,100);
+	noStroke();
+	rect(i, 70, 50, height-100);
 }
 
 // var vegName = veg.vegetable_cooking_times[0].name; //holding name of veg
 
-for (var i = 0; i <veg.vegetable_cooking_times.length ; i++) { // objects in dataset
+for (var i= 0; i <veg.vegetable_cooking_times.length ; i++) { // objects in dataset
 
 	var obj = veg.vegetable_cooking_times[i];
 	var t = obj.vegetable;				//title of vegetable
@@ -51,21 +52,22 @@ for (var i = 0; i <veg.vegetable_cooking_times.length ; i++) { // objects in dat
 // console.log(x1);
 // console.log(x2);
 // console.log(dur2);
-			
-			stroke(120,70,30,100);
+			stroke(217,50,70);
+			strokeWeight(3);
+			line(x0, range+ p,x0 + x1, range+ p);
+
+			stroke(217,70,70);
 			strokeWeight(5);
 			line(x0+ x1, range + p,x0+ x1+ dur, range+ p);
 
-			stroke(120,70,70,100);
-			strokeWeight(5);
-			line(x0, range+ p,x0 + x1, range+ p);
-
+			
 			noStroke();
-			textStyle(BOLD);
-			textSize(20);
-			fill(255,0,100);
+			// textStyle(LIGHT);
+			textSize(15);
+			fill(0);
 			textAlign(RIGHT);
 			text(t,x0 -10,range);
+			
 
 		
 
@@ -80,19 +82,42 @@ for (var i = 0; i <veg.vegetable_cooking_times.length ; i++) { // objects in dat
 		// console.log(veg.vegetable_cooking_times.length);
 }
 
+fill(0);
+textSize(10);
+text("min", x0-10, 67);
 
+// fill(45,30,100);
+textSize(30);
+textAlign(LEFT);
+text("steaming times of all the veggies", 200,40);
 
+for (var i= 0; i <= 60; i+=10) {
+	
+	noStroke();
+	textSize(10);
+	text(i,x0 + i*10,67);
 
-// console.log (vegName);
+	
 
+}
 
+	stroke(217,50,70);
+	strokeWeight(3);
+	line(width-70,height-20,width, height-20 );
+
+	stroke(217,70,70);
+	strokeWeight(5);
+	line(width-70,height-10,width, height-10);
+
+	noStroke();
+	textSize(10);
+	textAlign(RIGHT);
+	text("minimum steaming time",width-75,height-18);
+	text("time to pull them out",width-75,height-7);
 }
 
 function draw(){
 
-textSize(30);
-textAlign(LEFT);
-text("steaming times of all the veggies", 200,50);
 
 }
 
